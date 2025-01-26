@@ -2,26 +2,40 @@
 <html lang="en">
 
 <head>
-  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR + Three.js Test</title>
   <style>
     body {
       margin: 0;
       overflow: hidden;
     }
+
+    canvas {
+      display: block;
+    }
   </style>
 </head>
 
 <body>
+  <!-- Include AR.js, Three.js and A-Frame -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.js"></script>
+
   <a-scene embedded arjs>
-    <!-- Marker (Hiro) -->
+    <!-- Define a simple AR marker (use your own marker or an image) -->
     <a-marker preset="hiro">
-      <!-- Cube -->
-      <a-box position="0 0.5 0" material="color: red;"></a-box>
+      <!-- This is a 3D object (cube) that will appear on top of the marker -->
+      <a-box position="0 0.5 0" rotation="0 45 0" color="#4CC3D9"></a-box>
     </a-marker>
 
+    <!-- The camera element will use the phone's camera for AR -->
     <a-entity camera></a-entity>
   </a-scene>
+
+  <script>
+    // You can enhance this code by adding custom Three.js 3D objects and handling the camera movements for more complex AR scenarios.
+  </script>
 </body>
 
 </html>
